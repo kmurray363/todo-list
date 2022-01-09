@@ -5,7 +5,6 @@ const $container = document.querySelector(".to-dos")
 const Local = {
     storage: [],
     store: function(obj){
-        console.log(this)
         this.storage.push(obj)
         this.save();
     },

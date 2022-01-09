@@ -8,7 +8,7 @@ const newToDoDiv = () => {
     divContainer.classList.add('todo-card');
 
     const title = document.createElement('input');
-    const description = document.createElement('input');
+    const description = document.createElement('textarea');
     const dueDate = document.createElement('input');
 
     // creating dropdown options
@@ -44,7 +44,7 @@ const newToDoDiv = () => {
         $container.removeChild(divContainer);
         const toDoItem = createToDo(title.value, description.value, dueDate.value, priority.value);
         Local.store(toDoItem);
-
+        
         displayToDo(toDoItem, $container);
     });
 

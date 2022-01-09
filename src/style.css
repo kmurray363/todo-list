@@ -89,3 +89,10 @@
     margin: 5px;
 }
 
+.todo-desc {
+    height: 100px;
+    resize: none;
+    text-align: start;
+    vertical-align: text-top;
+}
+
