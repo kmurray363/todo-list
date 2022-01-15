@@ -11,8 +11,30 @@
         <h1>TO-DO LIST</h1>
     </div>
     <div class = 'main'>
-        <div class = 'sidebar flex-column'></div>
-        <div class = 'to-dos'></div>
+        <div class = 'sidebar flex-column'>
+            <!-- Trigger/Open The Modal -->
+            <button id="createToDoBtn">New To-Do</button>
+        </div>
+        <div class = 'to-dos'>
+
+            <!-- The Modal -->
+            <div id="newToDo" class="modal">
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <h2>New To-Do Item</h2> 
+                    <label>Title</label>
+                    <input id = "toDoTitle">
+                    <label>Description</label>
+                    <input id = "toDoDesc">
+                    <label>Due Date</label>
+                    <input id = "toDoDate" type = "date">
+                    <label>Priority</label>
+                    <input id = "toDoPrio">
+                    <button id="submitBtn">SUBMIT</button>
+                </div>
+            </div>
+        </div>
     </div>
     <div class = 'footer'>
         <p>Copyright Kyle Murray 2022</p>

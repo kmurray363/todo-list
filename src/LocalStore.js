@@ -1,4 +1,5 @@
 import displayToDo from "./displayToDo"
+import DOMstuff from "./DOMstuff";
 
 const $container = document.querySelector(".to-dos")
 
@@ -12,7 +13,8 @@ const Local = {
         console.log(this.storage)
     },
 
-    populate: function () {
+    populate: function () {   
+        DOMstuff.clearToDos();  
         this.storage.forEach((obj)=>{
             displayToDo(obj, $container);
         })
@@ -24,6 +26,17 @@ const Local = {
 
     load: function() {
         this.storage = JSON.parse(localStorage.getItem("storage") || "[]");
+    },
+
+    delete: function(index){
+        const length = this.storage.length;
+        for (let i = 0; i < length; i++){
+            if(this.storage[i]['index'] === index){
+                this.storage.splice(i, 1);
+                this.save();
+                return;
+            }
+        }
     }
 }
 
