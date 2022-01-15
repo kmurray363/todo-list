@@ -4,6 +4,7 @@ const displayToDo = function(ToDoObj, appendTo){
     
     const outputDivContainer = document.createElement('div');
     outputDivContainer.classList.add('todo-card');
+    outputDivContainer.classList.add(`index-${ToDoObj.index}`);
 
     const outputTitle = document.createElement('div');
     const outputDescription = document.createElement('textarea');
@@ -26,6 +27,11 @@ const displayToDo = function(ToDoObj, appendTo){
     outputDivContainer.appendChild(outputDueDate);
     outputDivContainer.appendChild(outputPriority);
     outputDivContainer.appendChild(outputComplete);
+
+    outputComplete.onclick = (function(){
+        Local.delete(ToDoObj.index);
+        Local.populate();
+    })
 
     appendTo.prepend(outputDivContainer);
 }
