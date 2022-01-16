@@ -12,26 +12,43 @@
     </div>
     <div class = 'main'>
         <div class = 'sidebar flex-column'>
-            <!-- Trigger/Open The Modal -->
+            <!-- Open new todo modal -->
             <button id="createToDoBtn">New To-Do</button>
         </div>
         <div class = 'to-dos'>
 
-            <!-- The Modal -->
+            <!-- New To Do Modal -->
             <div id="newToDo" class="modal">
-                <!-- Modal content -->
+                <!-- New to Do Modal content -->
                 <div class="modal-content">
                     <span class="close">&times;</span>
                     <h2>New To-Do Item</h2> 
                     <label>Title</label>
                     <input id = "toDoTitle">
                     <label>Description</label>
-                    <input id = "toDoDesc">
+                    <textarea id = "toDoDesc"></textarea>
                     <label>Due Date</label>
                     <input id = "toDoDate" type = "date">
                     <label>Priority</label>
                     <input id = "toDoPrio">
                     <button id="submitBtn">SUBMIT</button>
+                </div>
+            </div>
+
+            <div id="editToDo" class="modal">
+                <!-- New to Do Modal content -->
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <h2>Edit Item</h2> 
+                    <label>Title</label>
+                    <input id = "editTitle">
+                    <label>Description</label>
+                    <textarea id = "editDesc"></textarea>
+                    <label>Due Date</label>
+                    <input id = "editDate" type = "date">
+                    <label>Priority</label>
+                    <input id = "editPrio">
+                    <button id="submitEditBtn">SUBMIT EDIT</button>
                 </div>
             </div>
         </div>
