@@ -29,15 +29,28 @@ const Local = {
     },
 
     delete: function(index){
+        index = parseInt(index);
         const length = this.storage.length;
         for (let i = 0; i < length; i++){
             if(this.storage[i]['index'] === index){
                 this.storage.splice(i, 1);
                 this.save();
+                this.show();
                 return;
             }
         }
-    }
+    },
+
+    //takes an index, returns the object that has that index
+    getObj: function(index){
+        index = parseInt(index);
+        const length = this.storage.length;
+        for (let i = 0; i < length; i++){
+            if(this.storage[i]['index'] === index){
+                return this.storage[i];
+            }
+        }
+    },
 }
 
 export default Local;

@@ -2,32 +2,32 @@ import createToDo from "./createToDo";
 import Local from "./LocalStore";
 
 const Modal = (function(){   
-    // Get the modal
-    const modal = document.getElementById("newToDo");
+    // Get the newToDo Modal
+    const newToDo = document.getElementById("newToDo");
 
-    // Get the button that opens the modal
-    const btn = document.getElementById("createToDoBtn");
+    // Get the button that opens the newToDo modal
+    const createToDoBtn = document.getElementById("createToDoBtn");
 
-    // Get the <span> element that closes the modal
+    // Get the <span> element that closes the newToDo modal
     const span = document.getElementsByClassName("close")[0];
 
-    // Get submit button from modal
+    // Get submit button from newToDo modal
     const submitBtn = document.getElementById("submitBtn");
 
     // When the user clicks on the button, open the modal
-    btn.onclick = function() {
-    modal.style.display = "block";
+    createToDoBtn.onclick = function() {
+    newToDo.style.display = "block";
     }
 
     // When the user clicks on <span> (x), close the modal
     span.onclick = function() {
-    modal.style.display = "none";
+    newToDo.style.display = "none";
     }
 
     // When the user clicks anywhere outside of the modal, close it
     window.onclick = function(event) {
-        if (event.target == modal) {
-            modal.style.display = "none";
+        if (event.target == newToDo) {
+            newToDo.style.display = "none";
         }
     }
       
@@ -37,8 +37,8 @@ const Modal = (function(){
         const dueDate = document.getElementById("toDoDate");
         const priority = document.getElementById("toDoPrio");
 
-        const newToDo = createToDo(title.value, description.value, dueDate.value, priority.value);
-        Local.store(newToDo);
+        const newToDoObj = createToDo(title.value, description.value, dueDate.value, priority.value);
+        Local.store(newToDoObj);
         Local.populate();
         
         //clear Modal Form
@@ -48,7 +48,7 @@ const Modal = (function(){
         priority.value = "";
 
         //close form
-        modal.style.display = "none";
+        newToDo.style.display = "none";
     }
 }());
 

@@ -103,6 +103,7 @@ label{
     margin: 15% auto; /* 15% from the top and centered */
     padding: 15px;
     border: 1px solid #888;
+    border-radius: 15px;
     width: 375px; /* Could be more or less, depending on screen size */
   }
 
@@ -118,6 +119,13 @@ label{
       margin-top: 10px;
       width: 200px;
       align-self: center;
+  }
+
+  .modal-content > textarea{
+      resize: none;
+      width: 345px;
+      height: 100px;
+      margin-bottom: 10px;
   }
   
   /* The Close Button */
