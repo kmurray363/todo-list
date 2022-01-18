@@ -16,25 +16,6 @@
             <button id="createToDoBtn">New To-Do</button>
         </div>
         <div class = 'to-dos'>
-
-            <!-- New To Do Modal -->
-            <div id="newToDo" class="modal">
-                <!-- New to Do Modal content -->
-                <div class="modal-content">
-                    <span class="close">&times;</span>
-                    <h2>New To-Do Item</h2> 
-                    <label>Title</label>
-                    <input id = "toDoTitle">
-                    <label>Description</label>
-                    <textarea id = "toDoDesc"></textarea>
-                    <label>Due Date</label>
-                    <input id = "toDoDate" type = "date">
-                    <label>Priority</label>
-                    <input id = "toDoPrio">
-                    <button id="submitBtn">SUBMIT</button>
-                </div>
-            </div>
-
             <div id="editToDo" class="modal">
                 <!-- New to Do Modal content -->
                 <div class="modal-content">
@@ -47,7 +28,11 @@
                     <label>Due Date</label>
                     <input id = "editDate" type = "date">
                     <label>Priority</label>
-                    <input id = "editPrio">
+                    <select id = "editPrio">
+                        <option value = "Low">Low</option>
+                        <option value = "Medium">Medium</option>
+                        <option value = "High">High</option>
+                    </select>
                     <button id="submitEditBtn">SUBMIT EDIT</button>
                 </div>
             </div>

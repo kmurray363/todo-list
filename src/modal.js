@@ -1,34 +1,103 @@
 import createToDo from "./createToDo";
 import Local from "./LocalStore";
 
-const Modal = (function(){   
-    // Get the newToDo Modal
-    const newToDo = document.getElementById("newToDo");
+const createModal = function(modalID, DOMelement, button){
+    //create modal and append to target DOMelement
+    const modal = document.createElement('div');
+    modal.setAttribute('id', `${modalID}`);
+    modal.classList.add('modal');
+    DOMelement.appendChild(modal);
 
-    // Get the button that opens the newToDo modal
-    const createToDoBtn = document.getElementById("createToDoBtn");
+    const modalContent = document.createElement('div');
+    modalContent.classList.add('modal-content');
+    modal.appendChild(modalContent);
 
-    // Get the <span> element that closes the newToDo modal
-    const span = document.getElementsByClassName("close")[0];
+    const span = document.createElement('span');
+    span.classList.add('close');
+    span.innerHTML = "&times;";
+    span.onclick = function() {
+        modal.style.display = "none"
+    };
+    modalContent.appendChild(span);
 
-    // Get submit button from newToDo modal
-    const submitBtn = document.getElementById("submitBtn");
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    };
 
     // When the user clicks on the button, open the modal
-    createToDoBtn.onclick = function() {
-    newToDo.style.display = "block";
+    button.onclick = function() {
+        modal.style.display = "block";
     }
 
-    // When the user clicks on <span> (x), close the modal
-    span.onclick = function() {
-    newToDo.style.display = "none";
-    }
+    return modalContent;
+}
 
-    // When the user clicks anywhere outside of the modal, close it
-    window.onclick = function(event) {
-        if (event.target == newToDo) {
-            newToDo.style.display = "none";
-        }
+const NewToDo = (function(){   
+    // Get the newToDo Modal
+    const container = document.querySelector(".to-dos");
+    const createToDoBtn = document.getElementById("createToDoBtn");
+
+    //create Modal Container and grab container to append to
+    const modalContent = createModal("newToDo", container, createToDoBtn);
+
+    //grab modal from DOM
+    const newToDo = document.getElementById("newToDo");
+
+    //create submit button
+    const submitBtn = document.createElement("button");
+    submitBtn.setAttribute("id", "submitBtn");
+    submitBtn.innerHTML = "SUBMIT";
+
+    //create Modal Contents
+    const modalTitle = document.createElement('h2');
+    modalTitle.innerHTML = "New To-Do Item"
+
+    const titleLabel = document.createElement('label');
+    titleLabel.innerHTML = "Title";
+
+    const titleInput = document.createElement('input');
+    titleInput.setAttribute('id', 'toDoTitle');
+    titleInput.value = "Title";
+
+    const descLabel = document.createElement('label');
+    descLabel.innerHTML = "Description"
+
+    const descInput = document.createElement('textarea');
+    descInput.setAttribute('id', 'toDoDesc');
+    descInput.value = "Description";
+
+    const dateLabel = document.createElement('label');
+    dateLabel.innerHTML = "Due Date";
+
+    const dateInput = document.createElement('input');
+    dateInput.setAttribute('id', 'toDoDate');
+    dateInput.type = "date";
+    dateInput.value = "2022-01-01";
+
+    const prioLabel = document.createElement('label');
+    prioLabel.innerHTML = "Priority";
+
+    const prioInput = document.createElement('select');
+    prioInput.setAttribute('id', 'toDoPrio');
+
+    const prioOptionOne = document.createElement('option');
+    prioOptionOne.value = "Low";
+    prioOptionOne.innerHTML = "Low";
+
+    const prioOptionTwo = document.createElement('option');
+    prioOptionTwo.value = "Medium";
+    prioOptionTwo.innerHTML = "Medium";
+
+    const prioOptionThree = document.createElement('option');
+    prioOptionThree.value = "High";
+    prioOptionThree.innerHTML = "High";
+
+    //Append Contents
+    const Contents = [modalTitle, titleLabel, titleInput, descLabel, descInput, dateLabel, dateInput, prioLabel, prioInput, submitBtn]
+    for(let ele in Contents){
+        modalContent.appendChild(Contents[ele]);
     }
       
     submitBtn.onclick = function(){
@@ -52,4 +121,7 @@ const Modal = (function(){
     }
 }());
 
-export default Modal
+const EditToDo = (function(){
+})
+
+export default NewToDo

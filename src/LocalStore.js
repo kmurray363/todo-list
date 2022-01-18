@@ -35,7 +35,6 @@ const Local = {
             if(this.storage[i]['index'] === index){
                 this.storage.splice(i, 1);
                 this.save();
-                this.show();
                 return;
             }
         }

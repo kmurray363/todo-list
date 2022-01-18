@@ -41,6 +41,7 @@ const displayToDo = function(ToDoObj, appendTo){
         const $editDate = document.getElementById("editDate");
         const $editPrio = document.getElementById("editPrio");
         const $submitEditBtn = document.getElementById("submitEditBtn")
+        const $span = document.getElementsByClassName("close")[1];
 
         $editToDo.style.display = "block";
 
@@ -48,6 +49,16 @@ const displayToDo = function(ToDoObj, appendTo){
         $editDesc.value = editTarget["description"];
         $editDate.value = editTarget["dueDate"];
         $editPrio.value = editTarget["priority"];
+
+        $span.onclick = function() {
+            $editToDo.style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            if (event.target == newToDo) {
+                $editToDo.style.display = "none";
+            }
+        }
 
         $submitEditBtn.onclick = function(){
             editTarget["title"] = $editTitle.value;
