@@ -20,6 +20,19 @@ const Local = {
         })
     },
 
+    filter: function(projectTitle){
+        if(projectTitle === "All Projects"){
+            this.populate();
+            return;
+        }
+        DOMstuff.clearToDos();  
+        this.storage.forEach((obj)=>{
+            if(obj['project'] === projectTitle){
+                displayToDo(obj, $container);
+            }
+        });
+    },
+
     save: function() {
         localStorage.setItem("storage", JSON.stringify(this.storage))
     },

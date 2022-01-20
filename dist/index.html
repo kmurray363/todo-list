@@ -14,28 +14,10 @@
         <div class = 'sidebar flex-column'>
             <!-- Open new todo modal -->
             <button id="createToDoBtn">New To-Do</button>
+            <button id="createNewProject">New Project</button>
         </div>
         <div class = 'to-dos'>
-            <div id="editToDo" class="modal">
-                <!-- New to Do Modal content -->
-                <div class="modal-content">
-                    <span class="close">&times;</span>
-                    <h2>Edit Item</h2> 
-                    <label>Title</label>
-                    <input id = "editTitle">
-                    <label>Description</label>
-                    <textarea id = "editDesc"></textarea>
-                    <label>Due Date</label>
-                    <input id = "editDate" type = "date">
-                    <label>Priority</label>
-                    <select id = "editPrio">
-                        <option value = "Low">Low</option>
-                        <option value = "Medium">Medium</option>
-                        <option value = "High">High</option>
-                    </select>
-                    <button id="submitEditBtn">SUBMIT EDIT</button>
-                </div>
-            </div>
+            <select id = "project-display"></select>
         </div>
     </div>
     <div class = 'footer'>

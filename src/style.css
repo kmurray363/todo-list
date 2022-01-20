@@ -48,6 +48,14 @@ label{
     display: flex;
 }
 
+.to-dos > select {
+    width: calc(96vw - 125px);
+    height: 30px;
+    border: none;
+    border-bottom: 1px solid black;
+    text-align: center;
+}
+
 .sidebar{
     display: flex;
     min-width: 150px;
@@ -115,6 +123,11 @@ label{
   .modal-content > input {
       margin-bottom: 10px;
   }
+
+  .modal-content > select {
+      margin-bottom: 10px;
+  }
+
   .modal-content > button{
       margin-top: 10px;
       width: 200px;
@@ -143,44 +156,3 @@ label{
     cursor: pointer;
   }
 
-
-
-/*
-.to-dos{
-    display: flex;
-    flex-wrap: wrap;
-    align-content: flex-start;
-    flex: 1;
-    margin: 0px;
-    background-color: #659DBD;
-    max-width: 95vw;
-    padding:10px;
-    border: 1px solid #557A95;
-}
-
-.todo-card{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    max-height: 500px;
-    margin: 10px;
-    width: 250px;
-    padding: 10px;
-    background-color: #B1A296;
-    border: 2px solid #557A95;
-    border-radius: 5px;
-}
-
-.todo-card > * {
-    width: 200px;
-    margin: 5px;
-}
-
-.todo-desc {
-    height: 100px;
-    resize: none;
-    text-align: start;
-    vertical-align: text-top;
-}
-*/

@@ -40,6 +40,7 @@ const displayToDo = function(ToDoObj, appendTo){
         const $editDesc = document.getElementById("editDesc");
         const $editDate = document.getElementById("editDate");
         const $editPrio = document.getElementById("editPrio");
+        const $editProject = document.getElementById("editProject")
         const $submitEditBtn = document.getElementById("submitEditBtn")
         const $span = document.getElementsByClassName("close")[1];
 
@@ -49,6 +50,7 @@ const displayToDo = function(ToDoObj, appendTo){
         $editDesc.value = editTarget["description"];
         $editDate.value = editTarget["dueDate"];
         $editPrio.value = editTarget["priority"];
+        $editProject.value = editTarget["project"];
 
         $span.onclick = function() {
             $editToDo.style.display = "none";
@@ -65,16 +67,18 @@ const displayToDo = function(ToDoObj, appendTo){
             editTarget["description"] = $editDesc.value;
             editTarget["dueDate"] = $editDate.value;
             editTarget["priority"] = $editPrio.value;
+            editTarget["project"] = $editProject.value;
             
             Local.delete(index);
             Local.store(editTarget);
-            Local.populate();
+            const project = document.getElementById('project-display')
+            Local.filter(project.value);
 
             $editToDo.style.display = "none";
         }
     })
 
-    appendTo.prepend(outputDivContainer);
+    appendTo.appendChild(outputDivContainer);
 }
 
 export default displayToDo;
