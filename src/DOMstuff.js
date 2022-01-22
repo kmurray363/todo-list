@@ -14,6 +14,8 @@ const DOMstuff = {
         const container = document.querySelector('#project-display');
         const projects = document.querySelectorAll('#project-display > option');
         for(const project in projects){
+            console.log(project);
+            console.log(projects);
             if(project === "entries") return;
             if(projects.length < 1) return;
             container.removeChild(projects[`${project}`]);

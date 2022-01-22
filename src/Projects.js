@@ -21,10 +21,12 @@ const Project = {
 
     populate: function () { 
         DOMstuff.clearProjects();
-        this.store({
-            title: "All Projects",
-            index: 0,
-        })
+        if(this.projects.length === 0){    
+            this.store({
+                title: "All Projects",
+                index: 0,
+            })
+        }
         const container = document.getElementById('project-display');   
         this.projects.forEach((obj)=>{
             const option = document.createElement('option');

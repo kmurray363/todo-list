@@ -38,7 +38,7 @@ const createModal = function(modalID, DOMelement, button){
 
 const NewToDo = (function(){   
     // Get the newToDo Modal
-    const container = document.querySelector(".to-dos");
+    const container = document.querySelector(".main");
     const createToDoBtn = document.getElementById("createToDoBtn");
 
     //create Modal Container and grab container to append to
@@ -133,10 +133,10 @@ const NewToDo = (function(){
         Local.populate();
         
         //clear Modal Form
-        title.value = "";
-        description.value = "";
-        dueDate.value = "";
-        priority.value = "";
+        title.value = "Title";
+        description.value = "Description";
+        dueDate.value = "1/1/2022";
+        priority.value = "Medium";
 
         //close form
         newToDo.style.display = "none";
@@ -145,7 +145,7 @@ const NewToDo = (function(){
 
 const EditToDo = (function(){
      // to-do container
-     const container = document.querySelector(".to-dos");
+     const container = document.querySelector(".main");
  
      //create Modal Container and grab container to append to
      const modalContent = createModal("editToDo", container);
@@ -231,7 +231,7 @@ const EditToDo = (function(){
 
 const NewProject = (function(){
     // Get the new project container
-    const container = document.querySelector(".to-dos");
+    const container = document.querySelector(".main");
 
     // get button to open project
     const newProjectBtn = document.getElementById('createNewProject');

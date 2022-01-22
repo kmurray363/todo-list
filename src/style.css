@@ -48,11 +48,22 @@ label{
     display: flex;
 }
 
+.to-dos{
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+}
+
 .to-dos > select {
-    width: calc(96vw - 125px);
+    width: 100%;
     height: 30px;
     border: none;
     border-bottom: 1px solid black;
+    border-right: 1px solid black;
+    border-left: 1px solid black;
     text-align: center;
 }
 
@@ -78,10 +89,12 @@ label{
 
 .todo-card {
     display: flex;
+    flex-direction: column;
     margin: 10px 25px 10px 25px;
     justify-content: space-between;
     align-items: center;
-    width: calc(92vw - 125px);
+    width: 200px;
+    height: 200px;
     border: 1px solid black;
     border-radius: 5px;
     padding: 5px;
